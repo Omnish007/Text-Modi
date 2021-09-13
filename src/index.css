@@ -1,0 +1,238 @@
+/* text container  */
+:root {
+  --BC_FOR_CHAR_WORD_TEXT: rgb(25, 135, 84);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: #d9d3c90f;
+  overflow-x:hidden ;
+}
+
+::-webkit-scrollbar{
+  width: 6px;
+  margin-right: 2px;
+}
+
+::-webkit-scrollbar-track{
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: rgb(71, 71, 71);
+  border-radius: 10px;
+}
+
+.container1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.heading {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: 600;
+  color: rgb(0, 0, 0);
+  user-select: none;
+  background: rgba(255, 255, 255, 0.931);
+  width: 100vw;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.text-area {
+  width: 70%;
+  resize: vertical;
+  margin-top: 50px;
+  font-size: 20px;
+  letter-spacing: 1.2px;
+}
+
+.form-control:focus {
+  box-shadow: 0 0 0 0.25rem #38b64d50;
+  border-color: #3f644550;
+}
+
+.button {
+  background: rgb(25, 135, 84);
+  outline: none;
+  border: none;
+  margin-top: 30px;
+  padding: 10px 25px;
+  font-weight: 400;
+  color: white;
+  border-radius: 5px;
+}
+
+.button:hover {
+  background: rgb(37, 117, 37);
+}
+
+.btnsdiv {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.summarycont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  flex-direction: column;
+}
+
+.summary {
+  text-align: center;
+  margin-top: 20px;
+  background: rgb(0 0 0 / 3%);
+  padding: 50px 20px;
+  width: 70%;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 50px;
+}
+
+.words {
+  font-size: 40px;
+  background: whitesmoke;
+  padding: 8px;
+  border-radius: 5px;
+  border-top: 4px solid var(--BC_FOR_CHAR_WORD_TEXT);
+  border-right: 4px solid var(--BC_FOR_CHAR_WORD_TEXT);
+  border-left: 4px solid var(--BC_FOR_CHAR_WORD_TEXT);
+  font-weight: 700;
+  color: rgb(0, 0, 0);
+}
+
+.wordsdiv {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  transition: 0.3s;
+  user-select: none;
+}
+
+.wordsdiv:hover {
+  transform: scale(1.1);
+}
+
+.readdiv {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  transition: 0.3s;
+  user-select: none;
+}
+
+.readdiv:hover {
+  transform: scale(1.1);
+}
+
+.charsdiv {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  transition: 0.3s;
+  user-select: none;
+}
+
+.charsdiv:hover {
+  transform: scale(1.1);
+}
+
+.wordstext {
+  font-size: 20px;
+  text-transform: uppercase;
+  background: var(--BC_FOR_CHAR_WORD_TEXT);
+  color: white;
+  padding: 20px 30px;
+  margin-top: -5px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+/* preview */
+
+.preview {
+  width: 70%;
+  margin: auto;
+  border: 2px solid rgb(49 204 132 / 27%);
+  border-radius: 10px;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.preview h2 {
+  text-align: center;
+  margin: 10px 0;
+}
+
+.preview p {
+  margin: 0 20px;
+}
+
+/* previewbox */
+
+.modalcont{
+  width: 200px;
+}
+
+.modalopenbutton{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-right: 10px;
+  margin-bottom: 5px;
+  padding: 5px 10px;
+  background-color: rgb(25, 135, 84);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  transition: 1s;
+}
+
+.modalopenbutton:hover {
+  transform:rotate(360deg);
+}
+
+.modalclosebutton{
+  position: absolute;
+  top: 10;
+  right: 10px;
+  margin-right: 10px;
+  margin-bottom: 5px;
+  padding: 4px 10px;
+  background-color: rgb(180, 54, 37);
+  border: none;
+  color: white;
+
+}
+
+.modalcopyutton{
+  position: absolute;
+  top: 8;
+  right: 50px;
+  margin-right: 10px;
+  margin-bottom: 5px;
+  padding: 4px 12px;
+  background-color:rgb(25, 135, 84);
+  padding-right: 30px;
+  border: none;
+  color: white;
+  transition: all 2s;
+}
+
+.fa-check-circle{
+  position: absolute;
+  top: 25px;
+  right: 55px;
+  margin-bottom: 5px;
+  padding: 4px 12px;
+  border: none;
+  color: white;
+}
+

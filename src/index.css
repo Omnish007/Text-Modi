@@ -68,12 +68,14 @@ body {
 }
 
 .button:hover {
-  background: rgb(37, 117, 37);
+  background: rgb(37, 117, 37); 
 }
 
 .btnsdiv {
   display: flex;
-  justify-content: space-evenly;
+  width: 70%;
+  justify-content: space-between;
+  margin: 0 auto;
 }
 
 .summarycont {

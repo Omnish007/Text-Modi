@@ -1,24 +1,37 @@
 import React, { useState } from 'react'
 import Modal from 'react-modal';
 
-function TextContiner() {
+function TextContiner({showAlert}) {
 
-    const [text, setText] = useState("Enter Text Here")
+    const [text, setText] = useState("")
     const [modalIsOpen, setIsOpen] = useState(false)
     const [isCopied, setIsCopied] = useState(false)
 
     const handleChange = (e) => {
         setText(e.target.value)
+        
     }
 
     const handleUpperCase = () => {
         setText(text.toUpperCase())
+        showAlert("success", "Uppercase successfully")
     }
 
     const handleLowerCase = () => {
         setText(text.toLowerCase())
+        showAlert("success", "Lowrecase successfully")
     }
 
+    const handleClear = () => {
+        setText("")
+        showAlert("success", "Clear successfully")
+    }
+
+    const handleRmExSpaces = () => {
+        let newText =  text.split(/[ ]+/)
+        setText(newText.join(" "))
+        showAlert("success", "Remove Extra Spaces successfully")
+    }
 
     function openModal() {
         setIsOpen(true)
@@ -45,7 +58,8 @@ function TextContiner() {
         overlay: {
             background: "rgb(41 41 41 / 32%)"
         }
-    };
+    }
+
 
     // Modal.setAppElement(document.getElementById('root'))
 
@@ -59,6 +73,8 @@ function TextContiner() {
                 <div className="btnsdiv">
                     <button className="button" onClick={handleUpperCase}>To Uppercase</button>
                     <button className="button" onClick={handleLowerCase}>To Lowercase</button>
+                    <button className="button" onClick={handleClear}>Clear</button>
+                    <button className="button" onClick={handleRmExSpaces}>Remove Extra Spaces</button>
                 </div>
 
             </div>
@@ -67,7 +83,11 @@ function TextContiner() {
                 <h1>Your text summary</h1>
                 <div className="summary">
                     <div className="wordsdiv">
-                        <span className="words">{text.split(" ").length}</span> <span className="wordstext"> words</span>
+                        <span className="words">{
+                            text.length > 0 ? text.split(" ").length
+                                            : 0
+                        }
+                        </span> <span className="wordstext"> words</span>
                     </div>
 
                     <div className="charsdiv">
@@ -75,13 +95,17 @@ function TextContiner() {
                     </div>
 
                     <div className="readdiv">
-                        <span className="words">{(0.008 * text.split(" ").length).toFixed(4)}</span> <span className="wordstext"> Minutes to read</span>
+                        <span className="words">{
+                            text.length > 0 ? (0.008 * text.split(" ").length).toFixed(4)
+                                            : 0
+                        }
+                        </span> <span className="wordstext"> Minutes to read</span>
                     </div>
                 </div>
 
                 <div className="preview" >
                     <h2>Preview</h2>
-                    <p>{text}</p>
+                    <p>{text.length > 0 ? text : "Write something"}</p>
                     <button onClick={openModal} className="modalopenbutton"><i className="fas fa-arrow-right"></i></button>
 
                     {
@@ -106,7 +130,7 @@ function TextContiner() {
                                         </button>
                                         {
                                             isCopied ? <i class="fas fa-check-circle"></i>
-                                                     : null
+                                                : null
                                         }
                                         <button className="modalclosebutton" onClick={() => setIsOpen(false)} ><i className="fas fa-times"></i></button>
                                         <h1>Preview</h1>
@@ -121,6 +145,7 @@ function TextContiner() {
                         </div>
 
                     }
+                   
                 </div>
             </div>
         </>

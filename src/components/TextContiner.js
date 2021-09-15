@@ -83,10 +83,7 @@ function TextContiner({showAlert}) {
                 <h1>Your text summary</h1>
                 <div className="summary">
                     <div className="wordsdiv">
-                        <span className="words">{
-                            text.length > 0 ? text.split(" ").length
-                                            : 0
-                        }
+                        <span className="words">{text.split(/\s+/).filter((ele) => {return ele.length !== 0}).length}
                         </span> <span className="wordstext"> words</span>
                     </div>
 

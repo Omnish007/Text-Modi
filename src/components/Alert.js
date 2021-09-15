@@ -2,11 +2,11 @@ import React from 'react'
 
 function Alert({ alert }) {
     return (
-
-        alert && <div class={`alert alert-${alert.type} alert-dismissible fade show`} role="alert">
-            <strong> {alert.type} </strong> {alert.msg}
+        <div style={{height:"60px"}}>
+            {alert && <div class={`alert alert-${alert.type} alert-dismissible fade show`} role="alert">
+                <strong> {alert.type} </strong> {alert.msg}
+            </div>}
         </div>
-
     )
 }
 
